@@ -30,6 +30,7 @@ The project uses the **Statlog (German Credit Data)** dataset from the **UCI Mac
 - Number of features: 20
 - Target classes: Good Credit and Bad Credit
 - Missing values: 0
+- Duplicate rows: 0
 
 ### Target Encoding
 
@@ -130,6 +131,22 @@ The project follows these steps:
 
 ---
 
+## Data Preprocessing
+
+The dataset contains both numerical and categorical variables.
+
+The preprocessing pipeline applies:
+
+- **StandardScaler** to numerical features
+- **OneHotEncoder** to categorical features
+- `handle_unknown="ignore"` for categorical encoding
+
+The data was divided into training and testing sets using an **80:20 stratified split** with `random_state=42`.
+
+This ensured that the class distribution was maintained between the training and testing sets.
+
+---
+
 ## Models Evaluated
 
 Three classification algorithms were evaluated:
@@ -138,7 +155,7 @@ Three classification algorithms were evaluated:
 2. Decision Tree
 3. Random Forest
 
-Class balancing was applied during model training to improve the handling of the imbalanced target distribution.
+The models were compared using multiple evaluation metrics rather than relying only on accuracy.
 
 ---
 
@@ -174,30 +191,178 @@ It achieved:
 - F1-Score: **65.75%**
 - ROC-AUC: **80.58%**
 
-The model achieved the highest recall, F1-score, and ROC-AUC among the three evaluated models.
+Although Random Forest achieved slightly higher accuracy and precision, Logistic Regression achieved the highest recall, F1-score, and ROC-AUC among the evaluated models.
 
 The higher recall is particularly useful for identifying a larger proportion of applicants belonging to the Bad Credit class.
 
 ---
 
-## Google Colab Link
-https://colab.research.google.com/drive/1SC-9-T0bwzPUOCe_zyk0YeASNgvDE6tI?usp=sharing
-
 ## Confusion Matrix
 
 The final Logistic Regression model produced the following confusion matrix on the 200-sample test set:
 
-```text
-[[102  38]
- [ 12  48]]
+    [[102  38]
+     [ 12  48]]
+
+The model correctly classified:
+
+- 102 Good Credit applicants as Good Credit
+- 48 Bad Credit applicants as Bad Credit
+
+It incorrectly classified:
+
+- 38 Good Credit applicants as Bad Credit
+- 12 Bad Credit applicants as Good Credit
+
+The model therefore identified **48 out of 60 Bad Credit applicants**, resulting in a **Bad Credit recall of 80.00%**.
+
+---
+
+## Classification Report
+
+The final Logistic Regression model achieved the following classification performance:
+
+| Class | Precision | Recall | F1-Score |
+|---|---:|---:|---:|
+| Good Credit | 89% | 73% | 80% |
+| Bad Credit | 56% | 80% | 66% |
+
+Overall accuracy: **75%**
+
+The model shows stronger recall for the Bad Credit class, which is important when the objective is to identify potentially risky applicants.
+
+---
+
+## Five-Fold Cross-Validation
+
+Five-fold cross-validation was performed on the Logistic Regression model to evaluate the consistency of its performance across different data splits.
+
+| Metric | Mean | Standard Deviation |
+|---|---:|---:|
+| Accuracy | 71.90% | 2.75% |
+| Precision | 52.39% | 3.41% |
+| Recall | 72.00% | 4.14% |
+| F1-Score | 60.61% | 3.42% |
+| ROC-AUC | 78.55% | 1.92% |
+
+The cross-validation results indicate relatively consistent performance across the five folds.
+
+---
+
+## Feature Importance Analysis
+
+Feature importance was analyzed using the absolute coefficients of the final Logistic Regression model.
+
+The top contributing features were:
+
+| Feature | Importance |
+|---|---:|
+| Purpose | 4.2958 |
+| Savings Account | 1.9696 |
+| Checking Account Status | 1.8917 |
+| Credit History | 1.8181 |
+| Employment Duration | 1.3897 |
+| Property | 1.3538 |
+| Foreign Worker | 1.2197 |
+| Personal Status/Sex | 1.0065 |
+| Housing | 1.0039 |
+| Other Installment Plans | 0.9392 |
+
+These values represent the magnitude of the model coefficients after preprocessing and help identify which transformed features contributed most strongly to the model's predictions.
+
+---
+
+## Sample Predictions
+
+The final model was also tested on sample records to demonstrate individual credit-risk predictions.
+
+| Sample | Actual | Predicted | Bad Credit Probability |
+|---|---|---|---:|
+| 30 | Good | Good | 40.66% |
+| 128 | Good | Good | 18.67% |
+| 289 | Bad | Bad | 78.13% |
+| 216 | Good | Bad | 71.57% |
+| 966 | Bad | Good | 31.02% |
+
+These predictions demonstrate how the trained model can be used to classify individual applicants based on their input characteristics.
+
+---
+
+## Google Colab
+
+The complete implementation is available in Google Colab:
+
+https://colab.research.google.com/drive/1SC-9-T0bwzPUOCe_zyk0YeASNgvDE6tI?usp=sharing
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Google Colab
+- GitHub
+
+---
+
+## Project Structure
+
+    CodeAlpha_Credit-Scoring-Model/
+    │
+    ├── CodeAlpha_Credit_Scoring_Model.ipynb
+    ├── README.md
+    ├── requirements.txt
+    └── results/
+
+---
+
+## Results
+
+The project demonstrates a complete credit-risk classification workflow, including:
+
+- Dataset analysis
+- Data quality checking
+- Exploratory data analysis
+- Feature preprocessing
+- Multiple machine learning models
+- Model comparison
+- Confusion matrix analysis
+- ROC-AUC evaluation
+- Five-fold cross-validation
+- Feature importance analysis
+- Sample credit-risk predictions
+
+The final Logistic Regression model achieved **75.00% accuracy**, **80.00% recall**, **65.75% F1-score**, and **80.58% ROC-AUC** on the held-out test set.
+
+---
+
+## Limitations
+
+The model is developed using a historical public dataset and should not be considered a production-ready financial decision system.
+
+Real-world credit decisions require additional financial information, regulatory considerations, fairness analysis, continuous monitoring, and validation on current institutional data.
+
+The predictions generated by this project are intended for educational and research purposes.
+
+---
 
 ## Conclusion
 
-This project successfully developed and evaluated machine learning models for credit risk classification using the Statlog (German Credit Data) dataset. Three classification algorithms—Logistic Regression, Decision Tree, and Random Forest—were implemented and compared using accuracy, precision, recall, F1-score, and ROC-AUC.
+This project successfully developed and evaluated machine learning models for credit risk classification using the Statlog (German Credit Data) dataset.
 
-Among the evaluated models, Logistic Regression was selected as the final model because it achieved the highest recall (80.00%), F1-score (65.75%), and ROC-AUC (80.58%). The confusion matrix shows that the model correctly identified 48 out of 60 Bad Credit applicants while maintaining a reasonable overall accuracy of 75.00%.
+Three classification algorithms—Logistic Regression, Decision Tree, and Random Forest—were implemented and compared using accuracy, precision, recall, F1-score, and ROC-AUC.
 
-The project demonstrates an end-to-end machine learning workflow for credit risk classification, from data preprocessing and exploratory analysis to model evaluation, cross-validation, feature importance analysis, and final prediction.
+Among the evaluated models, Logistic Regression was selected as the final model because it achieved the highest recall (**80.00%**), F1-score (**65.75%**), and ROC-AUC (**80.58%**).
+
+The confusion matrix shows that the model correctly identified **48 out of 60 Bad Credit applicants**, demonstrating its ability to detect a substantial proportion of potentially risky applicants.
+
+The project demonstrates an end-to-end machine learning workflow, from dataset acquisition and exploratory analysis to preprocessing, model comparison, cross-validation, feature importance analysis, and final credit-risk prediction.
+
+---
 
 ## Author
 
