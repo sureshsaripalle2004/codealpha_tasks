@@ -1,0 +1,6 @@
+checking_account_status,duration_months,credit_history,purpose,credit_amount,savings_account,employment_duration,installment_rate,personal_status_sex,other_debtors,residence_duration,property,age,other_installment_plans,housing,existing_credits,job,dependents,telephone,foreign_worker,Actual_Risk,Predicted_Risk,Bad_Credit_Probability
+A12,18,A32,A49,1913,A64,A72,3,A94,A101,3,A121,36,A141,A152,1,A173,1,A192,A201,Good Credit,Good Credit,40.66
+A12,12,A34,A41,1860,A61,A71,4,A93,A101,2,A123,34,A143,A152,2,A174,1,A192,A201,Good Credit,Good Credit,18.67
+A11,24,A33,A43,1024,A61,A72,4,A94,A101,4,A121,48,A142,A152,1,A173,1,A191,A201,Bad Credit,Bad Credit,78.13
+A11,18,A30,A49,3104,A61,A74,3,A93,A101,1,A122,31,A141,A152,1,A173,1,A192,A201,Good Credit,Bad Credit,71.57
+A12,27,A34,A43,2520,A63,A73,4,A93,A101,2,A122,23,A143,A152,2,A172,1,A191,A201,Bad Credit,Good Credit,31.02
