@@ -1,60 +1,78 @@
 # CodeAlpha Machine Learning Internship
 
-## Internship Projects
+## Internship Project Submission
 
-This repository contains the three machine learning projects completed as part of the CodeAlpha Machine Learning Internship.
+This repository contains the three machine learning projects completed as part of the **CodeAlpha Machine Learning Internship**.
 
-## Intern Details
+### Intern Details
 
-Name: Saripalle Suresh
+- **Name:** Saripalle Suresh
+- **Registration No.:** CA/DF1/252981
+- **Domain:** Machine Learning
+- **Internship Period:** 20 August 2026 – 20 September 2026
 
-Registration No.: CA/DF1/252981
+---
 
-Domain: Machine Learning
-
-Internship Period: 20 August 2026 – 20 September 2026
-
-## Completed Projects
+## Completed Tasks
 
 ### Task 1 – Credit Scoring Model
 
-A machine learning project for classifying credit risk using the UCI Statlog German Credit dataset.
+A machine learning-based credit scoring system for classifying applicants into Good Credit and Bad Credit categories using the Statlog (German Credit Data) dataset.
 
-Models implemented:
-
+**Models implemented:**
 - Logistic Regression
 - Decision Tree
 - Random Forest
 
-The models were evaluated using accuracy, precision, recall, F1-score, ROC-AUC, confusion matrix, and cross-validation.
+**Best Model:** Logistic Regression
+
+**Key Test Results:**
+- Accuracy: 75.00%
+- Recall: 80.00%
+- F1-Score: 65.75%
+- ROC-AUC: 80.58%
+
+[Open Task 1](./Task_1_Credit_Scoring_Model/)
+
+---
 
 ### Task 2 – Handwritten Character Recognition
 
 A CNN-based handwritten digit recognition system developed using the MNIST dataset.
 
-The project includes:
+The project includes data preprocessing, CNN architecture development, model training, validation analysis, confusion matrix analysis, sample predictions, and real-world handwritten digit testing.
 
-- Dataset exploration
-- Image preprocessing
-- CNN model development
-- Model training
-- Validation analysis
-- Confusion matrix
-- Sample predictions
-- Real-world handwritten digit testing
+**Key Test Result:**
+- Test Accuracy: 99.28%
+
+[Open Task 2](./Task_2_Handwritten_Character_Recognition/)
+
+---
 
 ### Task 3 – Disease Prediction
 
-A machine learning-based disease prediction project using heart disease data.
+A machine learning-based disease prediction system developed using heart disease data.
 
-Models implemented:
+The project includes data quality analysis, exploratory data analysis, preprocessing, model comparison, feature importance analysis, model evaluation, ROC-AUC analysis, and a UCI cross-source consistency check.
 
+**Models implemented:**
 - Logistic Regression
 - Decision Tree
 - Random Forest
 - Gradient Boosting
 
-The project includes data quality analysis, preprocessing, exploratory data analysis, model comparison, feature importance, evaluation, and cross-source consistency analysis.
+**Best Model:** Random Forest
+
+**Held-out Test Results:**
+- Accuracy: 90.22%
+- Precision: 88.89%
+- Recall: 94.12%
+- F1-Score: 91.43%
+- ROC-AUC: 93.92%
+
+[Open Task 3](./Task_3_Disease_Prediction/)
+
+---
 
 ## Technologies Used
 
@@ -68,36 +86,57 @@ The project includes data quality analysis, preprocessing, exploratory data anal
 - Google Colab
 - GitHub
 
+---
+
 ## Repository Structure
 
-codealpha_tasks/
+    codealpha_tasks/
+    │
+    ├── Task_1_Credit_Scoring_Model/
+    │   ├── CodeAlpha_Credit_Scoring_Model.ipynb
+    │   ├── README.md
+    │   └── results/
+    │
+    ├── Task_2_Handwritten_Character_Recognition/
+    │   ├── CodeAlpha_Handwritten_Character_Recognition.ipynb
+    │   ├── README.md
+    │   └── results/
+    │
+    ├── Task_3_Disease_Prediction/
+    │   ├── CodeAlpha_Disease_Prediction.ipynb
+    │   ├── README.md
+    │   └── results/
+    │
+    └── README.md
 
-├── Task_1_Credit_Scoring_Model/
+---
 
-├── Task_2_Handwritten_Character_Recognition/
+## Google Colab Notebooks
 
-└── Task_3_Disease_Prediction/
+### Task 1 – Credit Scoring Model
 
-## Project Links
+https://colab.research.google.com/drive/1SC-9-T0bwzPUOCe_zyk0YeASNgvDE6tI?usp=sharing
 
-### Task 1
-Credit Scoring Model
-Google Colab https://colab.research.google.com/drive/1SC-9-T0bwzPUOCe_zyk0YeASNgvDE6tI?usp=sharing
+### Task 2 – Handwritten Character Recognition
 
-### Task 2
-Handwritten Character Recognition
-Google Colab https://colab.research.google.com/drive/1DOdTS6nn9j3RUcW6g-Ota3pD45IgPXGj?usp=sharing
+https://colab.research.google.com/drive/1DOdTS6nn9j3RUcW6g-Ota3pD45IgPXGj?usp=sharing
 
-### Task 3
-Disease Prediction
-Google colab https://colab.research.google.com/drive/1wzHNhplgTu9DfT0BNo7EGE56g8Ewwfrq?usp=sharing
+### Task 3 – Disease Prediction
 
-## Important Note
+The complete implementation is available in the Task 3 project folder.
 
-The projects in this repository were developed and evaluated as part of the CodeAlpha Machine Learning Internship.
+---
+
+## About This Repository
+
+This repository consolidates the three completed projects submitted for the **CodeAlpha Machine Learning Internship**.
+
+Each project contains its implementation notebook, project documentation, and generated results.
+
+---
 
 ## Author
 
-Saripalle Suresh
+**Saripalle Suresh**
 
-Machine Learning Intern – CodeAlpha
+Machine Learning Intern — CodeAlpha
