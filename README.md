@@ -82,22 +82,19 @@ codealpha_tasks/
 
 ### Task 1
 Credit Scoring Model
+Google Colab https://colab.research.google.com/drive/1SC-9-T0bwzPUOCe_zyk0YeASNgvDE6tI?usp=sharing
 
 ### Task 2
 Handwritten Character Recognition
+Google Colab https://colab.research.google.com/drive/1DOdTS6nn9j3RUcW6g-Ota3pD45IgPXGj?usp=sharing
 
 ### Task 3
 Disease Prediction
+Google colab https://colab.research.google.com/drive/1wzHNhplgTu9DfT0BNo7EGE56g8Ewwfrq?usp=sharing
 
 ## Important Note
 
 The projects in this repository were developed and evaluated as part of the CodeAlpha Machine Learning Internship.
-## Google colab
-## Task 1
-
-## Task 2
-
-## Task 3
 
 ## Author
 
