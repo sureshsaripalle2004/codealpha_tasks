@@ -1,0 +1,7 @@
+metric,value
+Training Accuracy,0.9942777752876282
+Validation Accuracy,0.9911666512489319
+Test Accuracy,0.9908000230789185
+Macro Precision,0.9908799222992254
+Macro Recall,0.9906299511638551
+Macro F1 Score,0.9907422507606991
